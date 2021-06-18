@@ -1,0 +1,1 @@
+This code displays the greeting in dynamic color depending on the time.
