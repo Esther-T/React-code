@@ -11,6 +11,12 @@ function createCard(emoji){
     />);
 }
 
+const testEmoji = emojis.map(function(emoji){
+  return emoji.meaning.substring(0,100);
+});
+
+console.log(testEmoji);
+
 function App() {
   return (
     <div>
