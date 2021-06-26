@@ -2,18 +2,8 @@ import React from "react";
 import Card from "./Card";
 import emojis from "../emojipedia.js"
 
-function createCard(emoji){
-  return(<Card
-    key={emoji.id}
-    name={emoji.name}
-    emoji={emoji.emoji}
-    meaning={emoji.meaning}
-    />);
-}
 
-const testEmoji = emojis.map(function(emoji){
-  return emoji.meaning.substring(0,100);
-});
+const testEmoji = emojis.map(emoji => emoji.meaning.substring(0,100));
 
 console.log(testEmoji);
 
@@ -24,7 +14,13 @@ function App() {
         <span>emojipedia</span>
       </h1>
       <dl className="dictionary">
-        {emojis.map(createCard)}
+        {emojis.map(emoji =>(
+            <Card
+            key={emoji.id}
+            name={emoji.name}
+            emoji={emoji.emoji}
+            meaning={emoji.meaning}
+            />))}
       </dl>
     </div>
   );
