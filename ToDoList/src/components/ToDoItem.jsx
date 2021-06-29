@@ -1,16 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
 function Item(props) {
-  const [isClick, click] = useState(false);
-
-  function handleClick() {
-    click(true);
-  }
-
   return (
     <div
-      onClick={handleClick}
-      style={{ textDecoration: isClick && "line-through" }}
+      onClick={() => {
+        props.onChecked(props.id);
+      }}
     >
       <li>{props.item}</li>
     </div>
